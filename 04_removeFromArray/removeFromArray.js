@@ -1,15 +1,16 @@
 const removeFromArray = function(array, ...toRemove) {
-    let argArray = [...toRemove]
-    let cleanArray = array.filter(cleaner);
-    function cleaner(testee) {
-        for (let i = 0; i < argArray.length; i++) {
-            if (testee === argArray[i]) {continue}
-            else {
-                return testee;
+    let argArray = [...toRemove];
+    for (arg of argArray) {
+        for (piece of array) {
+            if (arg === piece) {
+                ind = array.indexOf(piece);
+                array.splice(ind, 1);
+            } else {
+                continue;
             }
         }
     }
-    return cleanArray;
+    return array;
 };
 
 // Do not edit below this line
