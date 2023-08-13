@@ -11,8 +11,6 @@ const findTheOldest = function(people) {
         return lastGuy > nextGuy ? -1 : 1;
     });
 
-    console.table({oldest});
-
     return oldest[0];
 };
 
